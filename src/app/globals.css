@@ -8,6 +8,13 @@
   --primary: #F6E1CF;
 }
 
+/* In your global CSS file */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden; /* Optional, to prevent horizontal scroll */
+}
 
 @layer utilities {
   .text-balance {

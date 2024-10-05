@@ -5,6 +5,14 @@ import "./globals.css";
 import NavBar from '@/components/Navbar';
 import { ThemeProvider } from '@mui/material/styles';
 import { createTheme } from '@mui/material/styles';
+import { Poppins } from 'next/font/google';
+
+const poppins = Poppins({
+  weight: '400',
+  display: 'swap',
+  variable: '--font-poppins',
+  subsets: ['latin'],
+})
 
 export default function RootLayout({
   children,
@@ -24,12 +32,12 @@ export default function RootLayout({
 
   return (
     <html lang="pt-br">
-      <body>
+      <body className={`${poppins.className} `}>
         <div id='root'>
           <AppRouterCacheProvider>
             <ThemeProvider theme={theme}>
               <NavBar />
-              {children}
+              {children}  
             </ThemeProvider>
           </AppRouterCacheProvider>
         </div>
